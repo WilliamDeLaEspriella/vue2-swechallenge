@@ -1,0 +1,126 @@
+{
+  "data": [
+    {
+      "id": 1063329363823722500,
+      "ticker": "USB",
+      "company": "U.S. Bancorp",
+      "brokerage": "Morgan Stanley",
+      "action": "target lowered by",
+      "rating_from": "Overweight",
+      "rating_to": "Overweight",
+      "target_from": 55,
+      "target_to": 51,
+      "created_at": ""
+    },
+    {
+      "id": 1063329362900877300,
+      "ticker": "AIRS",
+      "company": "AirSculpt Technologies",
+      "brokerage": "Leerink Partners",
+      "action": "target lowered by",
+      "rating_from": "Market Perform",
+      "rating_to": "Market Perform",
+      "target_from": 6.5,
+      "target_to": 2.5,
+      "created_at": ""
+    },
+    {
+      "id": 1063329362008571900,
+      "ticker": "COLB",
+      "company": "Columbia Banking System",
+      "brokerage": "Wells Fargo & Company",
+      "action": "target lowered by",
+      "rating_from": "Overweight",
+      "rating_to": "Overweight",
+      "target_from": 35,
+      "target_to": 26,
+      "created_at": ""
+    },
+    {
+      "id": 1063329360384458800,
+      "ticker": "OSTX",
+      "company": "OS Therapies",
+      "brokerage": "D. Boral Capital",
+      "action": "reiterated by",
+      "rating_from": "Buy",
+      "rating_to": "Buy",
+      "target_from": 20,
+      "target_to": 20,
+      "created_at": ""
+    },
+    {
+      "id": 1063329359485763600,
+      "ticker": "AVNT",
+      "company": "Avient",
+      "brokerage": "Wells Fargo & Company",
+      "action": "target lowered by",
+      "rating_from": "Overweight",
+      "rating_to": "Overweight",
+      "target_from": 55,
+      "target_to": 39,
+      "created_at": ""
+    },
+    {
+      "id": 1063329358584315900,
+      "ticker": "UDMY",
+      "company": "Udemy",
+      "brokerage": "Truist Financial",
+      "action": "reiterated by",
+      "rating_from": "Buy",
+      "rating_to": "Hold",
+      "target_from": 10,
+      "target_to": 7,
+      "created_at": ""
+    },
+    {
+      "id": 1063329357659471900,
+      "ticker": "KMI",
+      "company": "Kinder Morgan",
+      "brokerage": "JPMorgan Chase & Co.",
+      "action": "target raised by",
+      "rating_from": "Neutral",
+      "rating_to": "Neutral",
+      "target_from": 28,
+      "target_to": 29,
+      "created_at": ""
+    },
+    {
+      "id": 1063329356164923400,
+      "ticker": "ATRA",
+      "company": "Atara Biotherapeutics",
+      "brokerage": "Canaccord Genuity Group",
+      "action": "reiterated by",
+      "rating_from": "Buy",
+      "rating_to": "Buy",
+      "target_from": 17,
+      "target_to": 17,
+      "created_at": ""
+    },
+    {
+      "id": 1063329355201740800,
+      "ticker": "UFCS",
+      "company": "United Fire Group",
+      "brokerage": "Piper Sandler",
+      "action": "target raised by",
+      "rating_from": "Neutral",
+      "rating_to": "Neutral",
+      "target_from": 26,
+      "target_to": 28,
+      "created_at": ""
+    },
+    {
+      "id": 1063329354225123300,
+      "ticker": "AMCX",
+      "company": "AMC Networks",
+      "brokerage": "Morgan Stanley",
+      "action": "target lowered by",
+      "rating_from": "Underweight",
+      "rating_to": "Underweight",
+      "target_from": 9,
+      "target_to": 8,
+      "created_at": ""
+    }
+  ],
+  "msg": "get ratings_changes successfully",
+  "status": "success"
+}
