@@ -141,30 +141,32 @@
         <p class="mt-2 text-sm pt-12 text-gray-600"><Skeleton :rows="6" /></p>
       </div>
       <div v-else>
-        <h1 class="text-xl font-bold">{{ ratingChangeDetails.ticker }}</h1>
-        <h2 class="text-lg font-bold">{{ ratingChangeDetails.name }}</h2>
-        <p class="mt-2 text-sm text-gray-600">{{ ratingChangeDetails.description }}</p>
-        <GraphMACD :ticker="ratingChangeDetails.ticker" />
+        <h1 class="text-xl font-bold">{{ ratingChangeDetails?.ticker }}</h1>
+        <h2 class="text-lg font-bold">{{ ratingChangeDetails?.name }}</h2>
+        <p class="mt-2 text-sm text-gray-600">{{ ratingChangeDetails?.description }}</p>
+        <GraphMACD v-if="ratingChangeDetails?.ticker" :ticker="ratingChangeDetails?.ticker" />
       </div>
     </template>
   </ModalRatingChangeDetails>
 </template>
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 import { Skeleton } from '@brayamvalero/vue3-skeleton'
 
 import TargetLabelDiference from '@/components/TargetLabelDiference.vue'
 import GraphMACD from '@/components/GraphMACD.vue'
 import ModalRatingChangeDetails from '@/components/ModalRatingChangeDetails.vue'
+import type { RatingChange } from '@/types/ratingChangeQuery'
+
 import ColumnNameTable from './ColumnNameTable.vue'
 const showModal = ref(false)
 const tickerSelect = ref('')
-defineProps({
-  ratingChanges: Array,
-  loading: Boolean,
-})
+defineProps<{
+  ratingChanges: RatingChange[]
+  loading: boolean
+}>()
 
-const setTickerSelect = (ticker) => {
+const setTickerSelect = (ticker: string) => {
   tickerSelect.value = ticker
   showModal.value = true
 }

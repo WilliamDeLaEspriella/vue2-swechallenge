@@ -101,14 +101,14 @@ const handleSearch = () => {
 }
 const nextPage = () => {
   const currentPage = parseInt(ratingChangeQueryStore.page, 10)
-  ratingChangeQueryStore.page = currentPage + 1
+  ratingChangeQueryStore.page = '' + (currentPage + 1)
   useRatingChange(ratingChangeQueryStore.parseQuery)
 }
 const prevPage = () => {
   const currentPage = parseInt(ratingChangeQueryStore.page, 10)
   if (currentPage == 0) return
 
-  ratingChangeQueryStore.page = currentPage - 1
+  ratingChangeQueryStore.page = '' + (currentPage - 1)
   useRatingChange(ratingChangeQueryStore.parseQuery)
 }
 </script>

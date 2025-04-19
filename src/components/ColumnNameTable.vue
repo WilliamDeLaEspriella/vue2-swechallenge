@@ -17,16 +17,16 @@
   </th>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { useRatingChangeQueryStore } from '@/stores/ratingChangeQueryStore'
 import { useRatingChange } from '@/composables/useRatingChanges'
 
 const ratingChangeQueryStore = useRatingChangeQueryStore()
-const props = defineProps({
-  name: String,
-  label: String,
-  className: String,
-})
+const props = defineProps<{
+  name: string
+  label: string
+  className: string
+}>()
 
 const sortDirection = () => {
   if (props.label !== ratingChangeQueryStore.orderBy) {
@@ -43,7 +43,7 @@ const sortDirection = () => {
 
 const onClick = () => {
   ratingChangeQueryStore.setOrder(ratingChangeQueryStore.order === 'DESC' ? 'ASC' : 'DESC')
-  ratingChangeQueryStore.setOrderBy(props.label)
+  ratingChangeQueryStore.order = props.label
   useRatingChange(ratingChangeQueryStore.parseQuery)
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <span
-    v-if="targetTo > targetFrom"
+    v-if="(targetTo ?? 0) > (targetFrom ?? 0)"
     class="text-center align-baseline inline-flex px-2 py-1 mr-auto items-center font-semibold text-base/none text-success bg-success-light rounded-lg"
   >
     <svg
@@ -42,9 +42,15 @@
   <span v-else class="font-semibold text-light-inverse text-md/normal"> - </span>
 </template>
 
-<script setup>
-defineProps({
-  targetFrom: Number,
-  targetTo: Number,
-})
+<script setup lang="ts">
+withDefaults(
+  defineProps<{
+    targetFrom?: number
+    targetTo?: number
+  }>(),
+  {
+    targetFrom: 1,
+    targetTo: 0,
+  },
+)
 </script>
