@@ -14,3 +14,9 @@ export const findRatingChanges = async (ticker: string) => {
 
   return response.data.data.results
 }
+
+export const ratingChangeRecommendation = async () => {
+  const response = await axios.get(API_URL + '/rating_changes/recommendation')
+  console.log({ response })
+  return response.data.data.results
+}

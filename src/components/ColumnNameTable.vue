@@ -29,11 +29,11 @@ const props = defineProps<{
 }>()
 
 const sortDirection = () => {
-  if (props.label !== ratingChangeQueryStore.orderBy) {
+  if (props.label !== ratingChangeQueryStore.order) {
     return 'DESC'
   } else if (
-    props.label === ratingChangeQueryStore.orderBy &&
-    ratingChangeQueryStore.order === 'ASC'
+    props.label === ratingChangeQueryStore.order &&
+    ratingChangeQueryStore.orderBy === 'ASC'
   ) {
     return 'ASC'
   }
@@ -42,8 +42,10 @@ const sortDirection = () => {
 }
 
 const onClick = () => {
-  ratingChangeQueryStore.setOrder(ratingChangeQueryStore.order === 'DESC' ? 'ASC' : 'DESC')
-  ratingChangeQueryStore.order = props.label
+  console.log(ratingChangeQueryStore.order, ratingChangeQueryStore.orderBy)
+  ratingChangeQueryStore.setOrderBy(ratingChangeQueryStore.orderBy === 'DESC' ? 'ASC' : 'DESC')
+  ratingChangeQueryStore.setOrder(props.label)
+
   useRatingChange(ratingChangeQueryStore.parseQuery)
 }
 </script>

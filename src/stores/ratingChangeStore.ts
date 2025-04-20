@@ -35,3 +35,28 @@ export const useRatingChangeDetailsStore = defineStore('ratingChangeDetails', ()
 
   return { ratingChangesDetails, setRatingChangesDetails, error, setError, loading, setLoading }
 })
+
+export const useRatingChangeRecommendationStore = defineStore('RatingChangeRecommendation', () => {
+  const ratingChangeRecommendation = ref<RatingChangeDetails | null>(null)
+  const error = ref<string | null>(null)
+  const loading = ref(true)
+  const setRatingChangeRecommendation = (stock: RatingChangeDetails) => {
+    console.log('store', { stock })
+    ratingChangeRecommendation.value = stock
+  }
+  const setError = (errMsg: string) => {
+    error.value = errMsg
+  }
+  const setLoading = (isLoading: boolean) => {
+    loading.value = isLoading
+  }
+
+  return {
+    ratingChangeRecommendation,
+    setRatingChangeRecommendation,
+    error,
+    setError,
+    loading,
+    setLoading,
+  }
+})

@@ -1,5 +1,13 @@
-import { useRatingChangeDetailsStore, useRatingChangeStore } from '@/stores/ratingChangeStore'
-import { getRatingChanges, findRatingChanges } from '@/helpers/getRatingChanges'
+import {
+  useRatingChangeDetailsStore,
+  useRatingChangeStore,
+  useRatingChangeRecommendationStore,
+} from '@/stores/ratingChangeStore'
+import {
+  getRatingChanges,
+  findRatingChanges,
+  ratingChangeRecommendation,
+} from '@/helpers/getRatingChanges'
 import type { RatingChangeQuery } from '@/types/ratingChangeQuery'
 
 export const useRatingChange = async (params: RatingChangeQuery = {}) => {
@@ -29,5 +37,20 @@ export const useRatingChangeDetails = async (ticker: string) => {
     }
   } finally {
     ratingChangeStore.loading = false
+  }
+}
+
+export const useRatingChangeRecommendation = async () => {
+  const ratingChangeRecommendationStore = useRatingChangeRecommendationStore()
+  ratingChangeRecommendationStore.loading = true
+  try {
+    const stock = await ratingChangeRecommendation()
+    ratingChangeRecommendationStore.setRatingChangeRecommendation(stock)
+  } catch (e: unknown) {
+    if (e instanceof Error) {
+      ratingChangeRecommendationStore.error = e.message
+    }
+  } finally {
+    ratingChangeRecommendationStore.loading = false
   }
 }

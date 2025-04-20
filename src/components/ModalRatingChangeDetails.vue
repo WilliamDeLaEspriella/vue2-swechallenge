@@ -36,6 +36,7 @@ watch(
   () => props.ticker,
   (newTicker) => {
     if (newTicker) {
+      console.log({ newTicker })
       useRatingChangeDetails(newTicker)
     }
   },

@@ -40,6 +40,7 @@ export const useRatingChangeQueryStore = defineStore('ratingChangeQuery', {
       this.order = order
     },
     setOrderBy(orderBy: string) {
+      console.log({ orderBy })
       this.orderBy = orderBy
     },
   },
